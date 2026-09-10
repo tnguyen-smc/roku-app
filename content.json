@@ -1,1 +1,28 @@
-
+{
+  "feedVersion": "1.0",
+  "providerName": "St. Mary Catholic Church",
+  "lastUpdated": "2026-09-10T00:00:00Z",
+  "categories": [
+    {
+      "name": "Renewed Series",
+      "playlist": [
+        {
+          "id": "101",
+          "title": "Renewed 1.1: God's Plan for Creation",
+          "description": "Episode 1.1 of the Renewed series exploring God's plan for creation.",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renewed.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v1.0/Renewed_1_1_Gods_Plan_for_Creation.mp4"
+        },
+        {
+          "id": "102",
+          "title": "Renewed 1.2: What Happened to God's Plan?",
+          "description": "Episode 1.2 of the Renewed series examining what happened to God's plan.",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renewed.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v1.0/Renewed_1_2_What_Happened_to_Gods_Plan.mp4"
+        }
+      ]
+    }
+  ]
+}
