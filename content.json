@@ -8,19 +8,99 @@
       "playlist": [
         {
           "id": "101",
-          "title": "Renewed 1.1: God's Plan for Creation",
-          "description": "Episode 1.1 of the Renewed series.",
+          "title": "Video 1.1 “Your Story” (3:29)",
+          "description": "Lesson 1.1: God’s Plan for Creation",
           "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renewed.jpeg",
           "streamFormat": "mp4",
           "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v1.0/Renewed_1_2_What_Happened_to_Gods_Plan.mp4"
         },
         {
           "id": "102",
-          "title": "Renewed 1.2: What Happened to God's Plan?",
-          "description": "Episode 1.2 of the Renewed series.",
+          "title": "Video 1.2 “Broken” (4:07)",
+          "description": "Lesson 1.2: What Happened to God’s Plan",
           "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renewed.jpeg",
           "streamFormat": "mp4",
           "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v1.0/Renewed_1_1_Gods_Plan_for_Creation.mp4"
+        },
+        {
+          "id": "103",
+          "title": "Video 2.1 “Trust” (4:45)",
+          "description": "Lesson 2.1: From Adam and Eve to the Exodus",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renewed.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Renewed_2_1.mp4"
+        },
+        {
+          "id": "104",
+          "title": "Video 2.2 “The Laundry Wars” (3:53)",
+          "description": "Lesson 2.2: From the Ten Commandments to the Promised Savior, Jesus Christ",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renewed.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Renewed_2_2.mp4"
+        },
+        {
+          "id": "105",
+          "title": "Video 3.1 “Stuck” (3:30)",
+          "description": "Lesson 3.1: Jesus Heals Us, Teaches Us, and Saves Us",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renewed.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Renewed_3_1.mp4"
+        },
+        {
+          "id": "106",
+          "title": "Video 3.2 “Talking to Jesus” (2:55)",
+          "description": "Lesson 3.2: Jesus Gives Us the Church to Continue His Work",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renewed.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Renewed_3_2.mp4"
+        },
+        {
+          "id": "107",
+          "title": "Video 4.1 “Where’s the Holy Spirit?” (1:42)",
+          "description": "Lesson 4.1: The Sacraments Bring Us God’s Love",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renewed.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Renewed_4_1.mp4"
+        },
+        {
+          "id": "108",
+          "title": "Video 4.2 “The Sacraments” (4:22)",
+          "description": "Lesson 4.2: The Sacraments Throughout Our Lives",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renewed.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Renewed_4_2.mp4"
+        },
+        {
+          "id": "109",
+          "title": "Video 5.1 “Theo’s Confession” (3:53)",
+          "description": "Lesson 5.1: Our Need for Forgiveness",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renewed.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Renewed_5_1.mp4"
+        },
+        {
+          "id": "110",
+          "title": "Video 5.2 “Light and Dark” (3:30)",
+          "description": "Lesson 5.2: Our Friendship with God",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renewed.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Renewed_5_2.mp4"
+        },
+        {
+          "id": "111",
+          "title": "Video 6.1 “Felicity’s First Reconciliation” (4:34)",
+          "description": "Lesson 6.1: Our First Reconciliation",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renewed.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Renewed_6_1.mp4"
+        },
+        {
+          "id": "112",
+          "title": "Video 6.2 “The Way to Heaven” (3:21)",
+          "description": "Lesson 6.2: Living the Life God Wants for Us",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renewed.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Renewed_6_2.mp4"
         }
       ]
     }
