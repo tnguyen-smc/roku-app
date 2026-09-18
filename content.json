@@ -103,6 +103,235 @@
           "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Renewed_6_2.mp4"
         }
       ]
+    },
+    {
+      "name": "Invited",
+      "playlist": [
+        {
+          "id": "200",
+          "title": "Lesson 1: \"What Do You Seek?\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_1.mp4"
+        },
+        {
+          "id": "201",
+          "title": "Lesson 2: \"How Can We Know That God Exists?\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_2.mp4"
+        },
+        {
+          "id": "202",
+          "title": "Lesson 3: \"God Reveals Himself to Us\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_3.mp4"
+        },
+        {
+          "id": "203",
+          "title": "Lesson 4: \"The Holy Trinity: God Is Love in Relationship\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_4.mp4"
+        },
+        {
+          "id": "204",
+          "title": "Lesson 5: \"If God Is Good, Why This Mess?\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_5.mp4"
+        },
+        {
+          "id": "205",
+          "title": "Lesson 6: \"Salvation History: God's Promise to Free Us\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_6.mp4"
+        },
+        {
+          "id": "206",
+          "title": "Lesson 7: \"Jesus Christ: God Becomes Man\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_7.mp4"
+        },
+        {
+          "id": "207",
+          "title": "Lesson 8: \"The Paschal Mystery: Jesus Delivers Us from Evil\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_8.mp4"
+        },
+        {
+          "id": "208",
+          "title": "Lesson 9: \"The Holy Spirit: God Dwells in Us\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_9.mp4"
+        },
+        {
+          "id": "209",
+          "title": "Lesson 10: \"Christian Prayer: God Invites Us into Relationship\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_10.mp4"
+        },
+        {
+          "id": "210",
+          "title": "Lesson 11: \"The Old Law and the New: Learning Freedom\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_11.mp4"
+        },
+        {
+          "id": "211",
+          "title": "Lesson 12: \"The Church: God's Family\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_12.mp4"
+        },
+        {
+          "id": "212",
+          "title": "Lesson 13: \"The Blessed Virgin Mary and the Saints: Our Extended Family\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_13.mp4"
+        },
+        {
+          "id": "213",
+          "title": "Lesson 14: \"The Last Things: God Will Set All Things Right\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_14.mp4"
+        },
+        {
+          "id": "214",
+          "title": "Lesson 15: \"The Liturgy and the Sacraments: Christ with Us\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_15.mp4"
+        },
+        {
+          "id": "215",
+          "title": "Lesson 16: \"The Sacrament of Baptism: Christ Welcomes Us\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_16.mp4"
+        },
+        {
+          "id": "216",
+          "title": "Lesson 17: \"The Sacrament of Confirmation: The Holy Spirit Seals Us\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_17.mp4"
+        },
+        {
+          "id": "217",
+          "title": "Lesson 18: \"The Holy Eucharist: Christ Feeds Us\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_18.mp4"
+        },
+        {
+          "id": "218",
+          "title": "Lesson 19: \"The Mass: We Worship God\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_19.mp4"
+        },
+        {
+          "id": "219",
+          "title": "Lesson 20: \"The Sacrament of Reconciliation: Christ Forgives Us\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_20.mp4"
+        },
+        {
+          "id": "220",
+          "title": "Lesson 21: \"The Anointing of the Sick: Christ Accompanies Us in Our Weakness\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_21.mp4"
+        },
+        {
+          "id": "221",
+          "title": "Lesson 22: \"The Sacrament of Holy Orders: Christ Acts Through the Clergy\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_22.mp4"
+        },
+        {
+          "id": "222",
+          "title": "Lesson 23: \"The Sacrament of Matrimony: The Domestic Church\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_23.mp4"
+        },
+        {
+          "id": "223",
+          "title": "Lesson 24: \"Liturgical Prayer and Popular Devotions\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_24.mp4"
+        },
+        {
+          "id": "224",
+          "title": "Lesson 25: \"The Christian Moral Life: Knowing Right from Wrong\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_25.mp4"
+        },
+        {
+          "id": "225",
+          "title": "Lesson 26: \"The Social Doctrine of the Church and the Works of Mercy\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_26.mp4"
+        },
+        {
+          "id": "226",
+          "title": "Lesson 27: \"The Culture of Life: Protecting the Most Vulnerable\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_27.mp4"
+        },
+        {
+          "id": "227",
+          "title": "Lesson 28: \"Discipleship and Evangelization: Sharing the Joy\"",
+          "description": "Invited: Your Journey Into the Catholic Church",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/invited.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v2.0/Invited_28.mp4"
+        }
+      ]
     }
   ]
 }
