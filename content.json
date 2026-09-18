@@ -105,6 +105,107 @@
       ]
     },
     {
+      "name": "Renovado",
+      "playlist": [
+        {
+          "id": "121",
+          "title": "Lección 1.1: El plan de Dios para la creación.",
+          "description": "Unidad 1: ¿Quién creó el universo?",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renovado.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v4.0/Renovado_1_1.mp4"
+        },
+        {
+          "id": "122",
+          "title": "Lección 1.2: ¿Qué sucedió con el plan de Dios?",
+          "description": "Unidad 1: ¿Quién creó el universo?",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renovado.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v4.0/Renovado_1_2.mp4"
+        },
+        {
+          "id": "123",
+          "title": "Lección 2.1: De Adán y Eva hasta el Éxodo.",
+          "description": "Unidad 2: ¿Cómo mostró Dios su amor a su pueblo después de la caída?",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renovado.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v4.0/Renovado_2_1.mp4"
+        },
+        {
+          "id": "124",
+          "title": "Lección 2.2: De los Diez Mandamientos hasta el Salvador prometido, Jesucristo.",
+          "description": "Unidad 2: ¿Cómo mostró Dios su amor a su pueblo después de la caída?",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renovado.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v4.0/Renovado_2_2.mp4"
+        },
+        {
+          "id": "125",
+          "title": "Lección 3.1. Jesús nos sana, nos enseña y nos salva.",
+          "description": "Unidad 3: ¿Quién es Jesús?",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renovado.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v4.0/Renovado_3_1.mp4"
+        },
+        {
+          "id": "126",
+          "title": "Lección 3.2: Jesús nos da la Iglesia para continuar su obra.",
+          "description": "Unidad 3: ¿Quién es Jesús?",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renovado.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v4.0/Renovado_3_2.mp4"
+        },
+        {
+          "id": "127",
+          "title": "Lección 4.1: Los sacramentos nos traen el amor de Dios.",
+          "description": "Unidad 4: ¿Por qué Jesús nos dio los sacramentos?",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renovado.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v4.0/Renovado_4_1.mp4"
+        },
+        {
+          "id": "128",
+          "title": "Lección 4.2: Los sacramentos a lo largo de nuestra vida.",
+          "description": "Unidad 4: ¿Por qué Jesús nos dio los sacramentos?",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renovado.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v4.0/Renovado_4_2.mp4"
+        },
+        {
+          "id": "129",
+          "title": "Lección 5.1: Nuestra necesidad del perdón.",
+          "description": "Unidad 5: ¿Por qué Jesús nos dio el sacramento de la Reconciliación?",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renovado.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v4.0/Renovado_5_1.mp4"
+        },
+        {
+          "id": "130",
+          "title": "Lección 5.2: Nuestra amistad con Dios.",
+          "description": "Unidad 5: ¿Por qué Jesús nos dio el sacramento de la Reconciliación?",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renovado.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v4.0/Renovado_5_2.mp4"
+        },
+        {
+          "id": "131",
+          "title": "Lección 6.1. Nuestra primera Confesión.",
+          "description": "Unidad 6: ¿Cómo vivimos el sacramento de la Reconciliación?",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renovado.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v4.0/Renovado_6_1.mp4"
+        },
+        {
+          "id": "132",
+          "title": "Lección 6.2: Vivir la vida que Dios quiere para nosotros.",
+          "description": "Unidad 6: ¿Cómo vivimos el sacramento de la Reconciliación?",
+          "thumbnail": "https://tnguyen-smc.github.io/roku-app/images/renovado.jpeg",
+          "streamFormat": "mp4",
+          "url": "https://github.com/tnguyen-smc/roku-app/releases/download/v4.0/Renovado_6_2.mp4"
+        }
+      ]
+    },
+    {
       "name": "Invited",
       "playlist": [
         {
