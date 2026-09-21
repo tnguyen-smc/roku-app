@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>St. Mary GC Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&family=Fira+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --base:#141829;
+    --base-deep:#0F1220;
+    --surface:#1C2136;
+    --surface-2:#242A42;
+    --gold:#C9A227;
+    --gold-soft:#E0C05A;
+    --paper:#F2F0EA;
+    --muted:#9AA0B4;
+    --rule:rgba(242,240,234,.16);
+    --serif:"Gentium Book Plus",Georgia,"Times New Roman",serif;
+    --sans:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    --tile-w:264px;
+    --gutter:clamp(20px,4vw,56px);
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  *,*::before,*::after{box-sizing:inherit}
+  html{scroll-padding-top:calc(96px + env(safe-area-inset-top,0px))}
+  body{
+    margin:0;
+    background:var(--base);
+    background-image:radial-gradient(120% 70% at 50% -10%, #1E2440 0%, var(--base) 55%, var(--base-deep) 100%);
+    background-attachment:fixed;
+    color:var(--paper);
+    font-family:var(--sans);
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+  :focus-visible{outline:2px solid var(--gold-soft);outline-offset:3px;border-radius:4px}
+
+  /* ---------- header ---------- */
+  .masthead{
+    position:sticky;top:0;z-index:40;
+    padding:calc(18px + env(safe-area-inset-top,0px)) var(--gutter) 14px;
+    background:rgba(15,18,32,.72);
+    backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px);
+    border-bottom:1px solid rgba(242,240,234,.08);
+    display:flex;align-items:baseline;gap:20px;flex-wrap:wrap;
+  }
+  .wordmark{font-family:var(--serif);font-weight:700;font-size:23px;letter-spacing:.005em;margin:0;line-height:1}
+  .wordmark span{color:var(--gold-soft)}
+  .parish{font-size:13px;color:var(--muted);margin:0}
+  .search{margin-left:auto;position:relative}
+  .search input{
+    font:inherit;font-size:14px;color:var(--paper);
+    background:rgba(242,240,234,.07);
+    border:1px solid rgba(242,240,234,.12);
+    border-radius:10px;padding:9px 14px;width:min(240px,42vw);
+  }
+  .search input::placeholder{color:var(--muted)}
+  .search input:focus{background:rgba(242,240,234,.11);border-color:rgba(242,240,234,.3);outline:none}
+
+  /* ---------- rows ---------- */
+  main{padding:clamp(28px,5vw,52px) 0 96px}
+  .row{margin-bottom:clamp(36px,5vw,60px)}
+  .row-head{
+    padding:0 var(--gutter);
+    display:flex;align-items:baseline;gap:16px;
+    margin-bottom:14px;
+  }
+  .row-title{font-family:var(--serif);font-weight:700;font-size:clamp(20px,2.4vw,27px);margin:0;line-height:1.2}
+  .row-count{font-size:13px;color:var(--muted)}
+  .row-toggle{font-size:13px;color:var(--gold-soft);margin-left:auto;padding:4px 2px}
+  .row-toggle:hover{color:var(--paper)}
+  .row-rule{height:1px;background:var(--rule);margin:0 var(--gutter) 18px}
+
+  .strip{
+    display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x proximity;
+    padding:4px var(--gutter) 10px;
+    scrollbar-width:none;
+  }
+  .strip::-webkit-scrollbar{display:none}
+  .row.expanded .strip{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(var(--tile-w),1fr));
+    overflow:visible;
+  }
+
+  /* ---------- tiles ---------- */
+  .tile{
+    position:relative;flex:0 0 var(--tile-w);width:var(--tile-w);
+    aspect-ratio:16/9;border-radius:12px;overflow:hidden;
+    background:var(--surface);scroll-snap-align:start;
+    text-align:left;display:block;
+    transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s ease;
+    box-shadow:0 1px 0 rgba(242,240,234,.06) inset;
+  }
+  .row.expanded .tile{flex:initial;width:auto}
+  .tile img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    opacity:.5;filter:saturate(.85);
+  }
+  .tile::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(15,18,32,.15) 0%,rgba(15,18,32,.62) 45%,rgba(15,18,32,.93) 100%);
+  }
+  .tile-body{position:absolute;inset:auto 0 0 0;padding:14px 15px 15px;z-index:2}
+  .tile-kicker{font-size:11.5px;color:var(--gold-soft);letter-spacing:.02em;margin:0 0 5px}
+  .tile-name{font-family:var(--serif);font-size:16.5px;line-height:1.28;margin:0;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .tile-dur{position:absolute;top:10px;right:11px;z-index:2;font-size:11.5px;
+    background:rgba(15,18,32,.68);padding:3px 7px;border-radius:5px;color:var(--paper);
+    backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+  .tile:hover,.tile:focus-visible{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.45)}
+  .tile:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  .tile.watched .tile-kicker::after{content:" · watched";color:var(--muted)}
+
+  .scroll-btn{
+    position:absolute;top:50%;transform:translateY(-50%);z-index:5;
+    width:38px;height:38px;border-radius:50%;
+    background:rgba(28,33,54,.9);border:1px solid rgba(242,240,234,.14);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    display:grid;place-items:center;font-size:16px;opacity:0;transition:opacity .2s}
+  .strip-wrap{position:relative}
+  .strip-wrap:hover .scroll-btn,.scroll-btn:focus-visible{opacity:1}
+  .scroll-btn[data-dir="prev"]{left:calc(var(--gutter) - 46px)}
+  .scroll-btn[data-dir="next"]{right:calc(var(--gutter) - 46px)}
+  @media (max-width:900px){.scroll-btn{display:none}}
+
+  /* ---------- theater ---------- */
+  .theater{
+    position:fixed;inset:0;z-index:100;
+    background:var(--base-deep);
+    display:none;flex-direction:column;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  .theater.open{display:flex}
+  .theater-bar{display:flex;align-items:center;gap:14px;padding:14px var(--gutter);flex:0 0 auto}
+  .back{display:inline-flex;align-items:center;gap:7px;font-size:14.5px;color:var(--muted);padding:6px 4px}
+  .back:hover{color:var(--paper)}
+  .theater-scroll{overflow-y:auto;flex:1 1 auto;padding-bottom:48px}
+  .stage{width:min(1120px,calc(100% - var(--gutter)*2));margin:0 auto}
+  video{width:100%;aspect-ratio:16/9;background:#000;border-radius:14px;display:block;
+    box-shadow:0 24px 60px rgba(0,0,0,.55)}
+  .now{margin:26px 0 0}
+  .now h2{font-family:var(--serif);font-weight:700;font-size:clamp(21px,2.6vw,30px);margin:0 0 8px;line-height:1.24}
+  .now p{color:var(--muted);font-size:15px;margin:0;max-width:62ch;line-height:1.55}
+  .player-error{display:none;margin-top:16px;padding:14px 16px;border-radius:10px;
+    background:rgba(201,162,39,.1);border:1px solid rgba(201,162,39,.32);font-size:14px}
+  .player-error.show{display:block}
+  .updeck{margin-top:40px}
+  .updeck h3{font-family:var(--serif);font-weight:700;font-size:17px;margin:0 0 10px}
+  .updeck .rule{height:1px;background:var(--rule);margin-bottom:14px}
+  .queue{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+  .queue button{
+    width:100%;text-align:left;display:flex;gap:14px;align-items:baseline;
+    padding:11px 14px;border-radius:9px;font-size:14.5px;line-height:1.45;
+    transition:background .15s}
+  .queue button:hover{background:rgba(242,240,234,.06)}
+  .queue button[aria-current="true"]{background:rgba(201,162,39,.12);color:var(--gold-soft)}
+  .queue .n{color:var(--muted);font-variant-numeric:tabular-nums;font-size:13px;min-width:2.4em;flex:0 0 auto}
+  .queue button[aria-current="true"] .n{color:var(--gold-soft)}
+  .queue .t{flex:1 1 auto}
+  .queue .d{color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums;flex:0 0 auto}
+
+  /* ---------- states ---------- */
+  .notice{padding:80px var(--gutter);max-width:60ch}
+  .notice h2{font-family:var(--serif);font-weight:700;font-size:22px;margin:0 0 10px}
+  .notice p{color:var(--muted);line-height:1.6;margin:0 0 6px;font-size:15px}
+  .notice code{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;color:var(--gold-soft)}
+  .empty{padding:60px var(--gutter);color:var(--muted)}
+
+  footer{padding:30px var(--gutter) 60px;color:var(--muted);font-size:13px;border-top:1px solid rgba(242,240,234,.08)}
+
+  @media (prefers-reduced-motion:reduce){
+    *{transition-duration:.01ms !important;scroll-behavior:auto !important}
+    .tile:hover,.tile:focus-visible{transform:none}
+  }
+  @media (max-width:640px){
+    :root{--tile-w:210px}
+    .search{margin-left:0;width:100%}
+    .search input{width:100%}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <h1 class="wordmark">St. Mary <span>GC</span> Media</h1>
+    <p class="parish">St. Mary Catholic Church</p>
+  </div>
+  <div class="search">
+    <input id="q" type="search" placeholder="Search lessons" aria-label="Search videos" autocomplete="off">
+  </div>
+</header>
+
+<main id="main" aria-live="polite">
+  <div class="notice" id="loading"><h2>Loading the library</h2><p>One moment.</p></div>
+</main>
+
+<footer id="foot" hidden></footer>
+
+<div class="theater" id="theater" role="dialog" aria-modal="true" aria-label="Video player">
+  <div class="theater-bar">
+    <button class="back" id="back">&larr; Back to library</button>
+  </div>
+  <div class="theater-scroll">
+    <div class="stage">
+      <video id="player" controls playsinline preload="metadata"></video>
+      <div class="now">
+        <h2 id="nowTitle"></h2>
+        <p id="nowDesc"></p>
+      </div>
+      <div class="player-error" id="playerError"></div>
+      <div class="updeck">
+        <h3 id="queueHead"></h3>
+        <div class="rule"></div>
+        <ul class="queue" id="queue"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const FEED_LOCAL = "content.json";
+const FEED_REMOTE = "https://tnguyen-smc.github.io/roku-app/content.json";
+const WATCHED_KEY = "smcgc.watched.v1";
+
+let categories = [];
+let flat = [];          // every item, with catIndex
+let current = null;     // currently playing item
+
+/* ---------- watched marks (per browser, best effort) ---------- */
+let watched = new Set();
+try {
+  const raw = localStorage.getItem(WATCHED_KEY);
+  if (raw) watched = new Set(JSON.parse(raw));
+} catch (e) { /* storage unavailable; marks just won't persist */ }
+function markWatched(id){
+  watched.add(id);
+  try { localStorage.setItem(WATCHED_KEY, JSON.stringify([...watched])); } catch (e) {}
+  document.querySelectorAll('.tile[data-id="'+id+'"]').forEach(t => t.classList.add("watched"));
+}
+
+/* ---------- title parsing -------------------------------------
+   Titles carry a trailing duration and often a leading label.
+   Pull both out so the tile can show them separately.            */
+function parseTitle(raw){
+  let name = raw.trim(), dur = "";
+  const m = name.match(/\s*\((\d{1,2}:\d{2})\)\s*$/);
+  if (m){ dur = m[1]; name = name.slice(0, m.index).trim(); }
+  let kicker = "";
+  const k = name.match(/^(Lesson\s+\d+,\s*(?:Seg\.\s*\d+|Review Game)|Lesson\s+\d+|Lecci[óo]n\s+[\d.]+|Video\s+[\d.]+)\s*[-–:]?\s*/i);
+  if (k){
+    kicker = k[1].replace(/\s+/g," ");
+    const rest = name.slice(k[0].length).trim();
+    if (rest){
+      name = rest;
+    } else if (kicker.includes(",")){
+      // e.g. "Lesson 3, Review Game" — the tail is the name, not part of the label
+      const at = kicker.lastIndexOf(",");
+      name = kicker.slice(at + 1).trim();
+      kicker = kicker.slice(0, at).trim();
+    }
+  }
+  return { name: name.replace(/^["“”]|["“”]$/g,""), kicker, dur, short: shortLabel(kicker) };
+}
+
+/* Compact, tabular label for the queue's left column. */
+function shortLabel(kicker){
+  if (!kicker) return "";
+  const seg = kicker.match(/^(?:Lesson|Lecci[óo]n|Video)\s+(\d+)[.,]\s*(?:Seg\.\s*)?(\d+)/i);
+  if (seg) return seg[1] + "." + seg[2];
+  const one = kicker.match(/^(?:Lesson|Lecci[óo]n|Video)\s+([\d.]+)/i);
+  return one ? one[1] : "";
+}
+
+/* ---------- load ---------- */
+async function load(){
+  let data = null, lastErr = null;
+  for (const url of [FEED_LOCAL, FEED_REMOTE]){
+    try {
+      const r = await fetch(url, {cache:"no-cache"});
+      if (!r.ok) throw new Error(url + " returned " + r.status);
+      data = await r.json();
+      break;
+    } catch (err){ lastErr = err; }
+  }
+  if (!data){ showFeedError(lastErr); return; }
+
+  categories = (data.categories || []).filter(c => (c.playlist||[]).length);
+  flat = [];
+  categories.forEach((c, ci) => (c.playlist||[]).forEach((item, ii) => {
+    flat.push(Object.assign({}, item, {catIndex: ci, itemIndex: ii, meta: parseTitle(item.title || "")}));
+  }));
+  render("");
+  const foot = document.getElementById("foot");
+  foot.hidden = false;
+  foot.textContent = flat.length + " videos across " + categories.length + " series · " +
+    (data.providerName || "");
+}
+
+function showFeedError(err){
+  document.getElementById("main").innerHTML =
+    '<div class="notice"><h2>The library did not load</h2>' +
+    '<p>This page looks for <code>content.json</code> in the same folder, then falls back to ' +
+    '<code>' + FEED_REMOTE + '</code>.</p>' +
+    '<p>Opening the file straight off your desktop will usually fail here — serve the folder over HTTP, ' +
+    'or put this file next to <code>content.json</code> on GitHub Pages.</p>' +
+    '<p>' + (err ? String(err.message || err) : "") + '</p></div>';
+}
+
+/* ---------- render ---------- */
+function render(filter){
+  const main = document.getElementById("main");
+  const q = filter.trim().toLowerCase();
+  main.innerHTML = "";
+
+  let shown = 0;
+  categories.forEach((cat, ci) => {
+    const items = flat.filter(it => it.catIndex === ci &&
+      (!q || (it.title + " " + (it.description||"")).toLowerCase().includes(q)));
+    if (!items.length) return;
+    shown += items.length;
+
+    const row = document.createElement("section");
+    row.className = "row";
+    if (q) row.classList.add("expanded");
+
+    const head = document.createElement("div");
+    head.className = "row-head";
+    const h = document.createElement("h2");
+    h.className = "row-title";
+    h.textContent = cat.name;
+    const count = document.createElement("span");
+    count.className = "row-count";
+    count.textContent = items.length + (items.length === 1 ? " video" : " videos");
+    head.append(h, count);
+
+    if (!q && items.length > 4){
+      const toggle = document.createElement("button");
+      toggle.className = "row-toggle";
+      toggle.textContent = "Show all";
+      toggle.addEventListener("click", () => {
+        const open = row.classList.toggle("expanded");
+        toggle.textContent = open ? "Show less" : "Show all";
+      });
+      head.append(toggle);
+    }
+
+    const rule = document.createElement("div");
+    rule.className = "row-rule";
+
+    const wrap = document.createElement("div");
+    wrap.className = "strip-wrap";
+    const strip = document.createElement("div");
+    strip.className = "strip";
+    items.forEach(it => strip.append(makeTile(it)));
+    wrap.append(strip);
+
+    if (!q){
+      ["prev","next"].forEach(dir => {
+        const b = document.createElement("button");
+        b.className = "scroll-btn";
+        b.dataset.dir = dir;
+        b.setAttribute("aria-label", dir === "prev" ? "Scroll left" : "Scroll right");
+        b.textContent = dir === "prev" ? "\u2039" : "\u203A";
+        b.addEventListener("click", () => {
+          strip.scrollBy({left: (dir === "prev" ? -1 : 1) * strip.clientWidth * 0.8, behavior:"smooth"});
+        });
+        wrap.append(b);
+      });
+    }
+
+    row.append(head, rule, wrap);
+    main.append(row);
+  });
+
+  if (!shown){
+    const e = document.createElement("p");
+    e.className = "empty";
+    e.textContent = "Nothing matches \u201C" + filter.trim() + "\u201D.";
+    main.append(e);
+  }
+}
+
+function makeTile(it){
+  const b = document.createElement("button");
+  b.className = "tile" + (watched.has(it.id) ? " watched" : "");
+  b.dataset.id = it.id;
+  b.setAttribute("aria-label", it.title);
+
+  if (it.thumbnail){
+    const img = document.createElement("img");
+    img.src = it.thumbnail;
+    img.alt = "";
+    img.loading = "lazy";
+    img.addEventListener("error", () => img.remove());
+    b.append(img);
+  }
+  if (it.meta.dur){
+    const d = document.createElement("span");
+    d.className = "tile-dur";
+    d.textContent = it.meta.dur;
+    b.append(d);
+  }
+  const body = document.createElement("div");
+  body.className = "tile-body";
+  if (it.meta.kicker){
+    const k = document.createElement("p");
+    k.className = "tile-kicker";
+    k.textContent = it.meta.kicker;
+    body.append(k);
+  }
+  const n = document.createElement("p");
+  n.className = "tile-name";
+  n.textContent = it.meta.name || it.title;
+  body.append(n);
+  b.append(body);
+
+  b.addEventListener("click", () => play(it));
+  return b;
+}
+
+/* ---------- theater ---------- */
+const theater = document.getElementById("theater");
+const player = document.getElementById("player");
+const playerError = document.getElementById("playerError");
+let lastFocus = null;
+
+function play(it){
+  current = it;
+  if (!theater.classList.contains("open")) lastFocus = document.activeElement;
+
+  document.getElementById("nowTitle").textContent = it.title;
+  document.getElementById("nowDesc").textContent = it.description || "";
+  playerError.classList.remove("show");
+  playerError.textContent = "";
+
+  player.poster = it.thumbnail || "";
+  player.src = it.url;
+  player.load();
+  player.play().catch(() => { /* autoplay blocked; the controls are right there */ });
+
+  buildQueue(it);
+  theater.classList.add("open");
+  document.body.style.overflow = "hidden";
+  document.querySelector(".theater-scroll").scrollTop = 0;
+  document.getElementById("back").focus();
+  history.replaceState(null, "", "#" + it.id);
+}
+
+function buildQueue(it){
+  const cat = categories[it.catIndex];
+  document.getElementById("queueHead").textContent = "More in " + cat.name;
+  const ul = document.getElementById("queue");
+  ul.innerHTML = "";
+  flat.filter(x => x.catIndex === it.catIndex).forEach(x => {
+    const li = document.createElement("li");
+    const b = document.createElement("button");
+    if (x.id === it.id) b.setAttribute("aria-current", "true");
+    const n = document.createElement("span");
+    n.className = "n";
+    n.textContent = x.meta.short || (x.itemIndex + 1);
+    const t = document.createElement("span");
+    t.className = "t";
+    t.textContent = x.meta.name || x.title;
+    const d = document.createElement("span");
+    d.className = "d";
+    d.textContent = x.meta.dur || "";
+    b.append(n, t, d);
+    b.addEventListener("click", () => play(x));
+    li.append(b);
+    ul.append(li);
+  });
+  const active = ul.querySelector('[aria-current="true"]');
+  if (active) active.scrollIntoView({block:"nearest"});
+}
+
+function closeTheater(){
+  player.pause();
+  player.removeAttribute("src");
+  player.load();
+  theater.classList.remove("open");
+  document.body.style.overflow = "";
+  history.replaceState(null, "", location.pathname + location.search);
+  if (lastFocus && document.contains(lastFocus)) lastFocus.focus();
+  current = null;
+}
+
+player.addEventListener("error", () => {
+  if (!player.currentSrc && !player.src) return;
+  playerError.textContent = "This video would not load. The file may not be attached to its release yet, " +
+    "or the link in content.json may point somewhere else.";
+  playerError.classList.add("show");
+});
+player.addEventListener("ended", () => {
+  if (!current) return;
+  markWatched(current.id);
+  const pool = flat.filter(x => x.catIndex === current.catIndex);
+  const at = pool.findIndex(x => x.id === current.id);
+  if (at > -1 && at + 1 < pool.length) play(pool[at + 1]);
+});
+player.addEventListener("timeupdate", () => {
+  if (current && player.duration && player.currentTime / player.duration > 0.9) markWatched(current.id);
+});
+
+document.getElementById("back").addEventListener("click", closeTheater);
+document.addEventListener("keydown", e => {
+  if (!theater.classList.contains("open")) return;
+  if (e.key === "Escape") closeTheater();
+});
+
+/* ---------- search ---------- */
+let t = null;
+document.getElementById("q").addEventListener("input", e => {
+  clearTimeout(t);
+  const v = e.target.value;
+  t = setTimeout(() => render(v), 140);
+});
+
+load();
+</script>
+</body>
+</html>
