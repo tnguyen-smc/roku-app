@@ -177,9 +177,46 @@
 
   footer{padding:30px var(--gutter) 60px;color:var(--muted);font-size:13px;border-top:1px solid rgba(242,240,234,.08)}
 
+  /* ---------- gate ---------- */
+  .gate{
+    position:fixed;inset:0;z-index:200;
+    background:var(--base);
+    background-image:radial-gradient(120% 70% at 50% -10%, #1E2440 0%, var(--base) 55%, var(--base-deep) 100%);
+    display:grid;place-items:center;padding:24px;
+  }
+  .gate[hidden]{display:none}
+  .gate-card{width:min(400px,100%);text-align:center}
+  .gate h1{font-family:var(--serif);font-weight:700;font-size:30px;margin:0 0 6px;line-height:1.15}
+  .gate h1 span{color:var(--gold-soft)}
+  .gate .lede{color:var(--muted);font-size:14.5px;margin:0 0 30px;line-height:1.55}
+  .gate-field{display:flex;gap:10px}
+  .gate input{
+    flex:1 1 auto;font:inherit;font-size:16px;color:var(--paper);text-align:center;
+    letter-spacing:.14em;
+    background:rgba(242,240,234,.07);
+    border:1px solid rgba(242,240,234,.16);
+    border-radius:11px;padding:13px 16px;min-width:0;
+  }
+  .gate input::placeholder{color:var(--muted);letter-spacing:normal}
+  .gate input:focus{background:rgba(242,240,234,.11);border-color:var(--gold);outline:none}
+  .gate button{
+    flex:0 0 auto;background:var(--gold);color:#1A1608;font-weight:500;font-size:15px;
+    border-radius:11px;padding:13px 22px;transition:background .15s;
+  }
+  .gate button:hover{background:var(--gold-soft)}
+  .gate-msg{min-height:1.4em;margin:14px 0 0;font-size:13.5px;color:var(--gold-soft)}
+  .gate-note{margin:34px 0 0;font-size:12.5px;color:var(--muted);line-height:1.5}
+  .shake{animation:shake .4s}
+  @keyframes shake{
+    0%,100%{transform:translateX(0)}
+    20%{transform:translateX(-7px)} 40%{transform:translateX(6px)}
+    60%{transform:translateX(-4px)} 80%{transform:translateX(3px)}
+  }
+
   @media (prefers-reduced-motion:reduce){
     *{transition-duration:.01ms !important;scroll-behavior:auto !important}
     .tile:hover,.tile:focus-visible{transform:none}
+    .shake{animation:none}
   }
   @media (max-width:640px){
     :root{--tile-w:210px}
@@ -189,6 +226,20 @@
 </style>
 </head>
 <body>
+
+<div class="gate" id="gate">
+  <div class="gate-card">
+    <h1>St. Mary <span>GC</span> Media</h1>
+    <p class="lede">Enter the parish access code to watch.</p>
+    <div class="gate-field">
+      <input id="gateInput" type="password" inputmode="text" autocomplete="off"
+             autocapitalize="none" spellcheck="false" placeholder="Access code" aria-label="Access code">
+      <button id="gateGo">Enter</button>
+    </div>
+    <p class="gate-msg" id="gateMsg" role="status"></p>
+    <p class="gate-note">This password is required once a day.</p>
+  </div>
+</div>
 
 <header class="masthead">
   <div>
@@ -231,6 +282,8 @@
 const FEED_LOCAL = "content.json";
 const FEED_REMOTE = "https://tnguyen-smc.github.io/roku-app/content.json";
 const WATCHED_KEY = "smcgc.watched.v1";
+const PASS = "stmargc";
+const PASS_KEY = "smcgc.access.v1";
 
 let categories = [];
 let flat = [];          // every item, with catIndex
@@ -525,7 +578,58 @@ document.getElementById("q").addEventListener("input", e => {
   t = setTimeout(() => render(v), 140);
 });
 
-load();
+/* ---------- access code ----------
+   A client-side gate: it keeps casual visitors out, but the code is visible
+   in this file's source. For real access control, put Cloudflare Access in
+   front of the deployment instead.                                         */
+const gate = document.getElementById("gate");
+const gateInput = document.getElementById("gateInput");
+const gateMsg = document.getElementById("gateMsg");
+
+function endOfToday(){
+  const d = new Date();
+  d.setHours(24, 0, 0, 0);   // next local midnight
+  return d.getTime();
+}
+function hasAccess(){
+  try {
+    const until = Number(localStorage.getItem(PASS_KEY));
+    if (until && Date.now() < until) return true;
+    if (until) localStorage.removeItem(PASS_KEY);
+  } catch (e) {}
+  return false;
+}
+function grantAccess(){
+  try { localStorage.setItem(PASS_KEY, String(endOfToday())); } catch (e) {}
+  gate.hidden = true;
+  document.body.style.overflow = "";
+  load();
+}
+function tryCode(){
+  if (gateInput.value.trim().toLowerCase() === PASS){
+    grantAccess();
+    return;
+  }
+  gateMsg.textContent = "That code did not match. Check with the parish office.";
+  gateInput.value = "";
+  gateInput.focus();
+  const card = gate.querySelector(".gate-card");
+  card.classList.remove("shake");
+  void card.offsetWidth;
+  card.classList.add("shake");
+}
+
+document.getElementById("gateGo").addEventListener("click", tryCode);
+gateInput.addEventListener("keydown", e => { if (e.key === "Enter") tryCode(); });
+gateInput.addEventListener("input", () => { gateMsg.textContent = ""; });
+
+if (hasAccess()){
+  gate.hidden = true;
+  load();
+} else {
+  document.body.style.overflow = "hidden";
+  gateInput.focus();
+}
 </script>
 </body>
 </html>
